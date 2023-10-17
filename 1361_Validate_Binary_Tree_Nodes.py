@@ -40,3 +40,4 @@ class Solution:
 assert Solution().validateBinaryTreeNodes(4, [1,-1,3,-1], [2,-1,-1,-1])
 assert not Solution().validateBinaryTreeNodes(4, [1,-1,3,-1], [2,3,-1,-1])
 assert not Solution().validateBinaryTreeNodes(2, [1,0], [-1,-1])
+assert not Solution().validateBinaryTreeNodes(6, [1,-1,-1,4,-1,-1], [2,-1,-1,5,-1,-1])
