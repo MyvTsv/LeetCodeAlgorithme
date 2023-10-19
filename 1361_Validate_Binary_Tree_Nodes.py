@@ -23,19 +23,16 @@ class Solution:
                 if right != -1:
                     roots.remove(right)
                     childNode[i].append(right)
-            if len(roots) > 1 or len(roots) == 0:
+            if len(roots) != 1:
                 return False
             queue = deque()
-            queue.appendleft(roots[0])
-            while len(queue) > 0:
-                node = queue.popleft()
+            queue.append(roots[0])
+            while queue:
+                node = queue.pop()
                 if node in visitedNode:
                     return False
-                if node in childNode:
-                    children = childNode[node]
-                    for child in children:
-                        queue.appendleft(child)
                 visitedNode.add(node)
+                queue.extend(childNode[node])
             if len(visitedNode) != n: return False
             return True
         except ValueError as e:
